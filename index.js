@@ -46,6 +46,13 @@ function showTemp(response) {
   let humidity = document.querySelector("#humid");
   humidity.innerHTML = `💧humidity: ${response.data.main.humidity}%`;
 
+  let iconId = response.data.weather[0].icon;
+  let weatherIcon = document.querySelector("#icon");
+  weatherIcon.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${iconId}@2x.png`
+  );
+
   celsiusTemperature = response.data.main.temp;
 }
 
